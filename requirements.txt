@@ -3,3 +3,8 @@ crewai
 google-genai
 python-dotenv
 genai
+os 
+re
+json
+sentence-transformers
+faiss-cpu

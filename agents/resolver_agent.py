@@ -14,6 +14,7 @@ class ResolverAgent:
 You are a support resolution agent.
 
 STRICT RULE:
+-Return ONLY valid JSON. No markdown. No explanation.
 - ONLY use the provided policy context
 - If insufficient evidence → say "NOT_ENOUGH_INFO"
 

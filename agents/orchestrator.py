@@ -2,6 +2,7 @@ from agents.triage_agent import TriageAgent
 from agents.retriever_agent import RetrieverAgent
 from agents.resolver_agent import ResolverAgent
 from agents.compliance_agent import ComplianceAgent
+from utils.llm import gemini_llm
 
 # Replace with actual LLM + retriever
 def dummy_llm(prompt):
@@ -11,10 +12,10 @@ class DummyRetriever:
     def get_relevant_documents(self, query):
         return []
 
-triage_agent = TriageAgent(dummy_llm)
+triage_agent = TriageAgent(gemini_llm)
 retriever_agent = RetrieverAgent(DummyRetriever())
-resolver_agent = ResolverAgent(dummy_llm)
-compliance_agent = ComplianceAgent(dummy_llm)
+resolver_agent = ResolverAgent(gemini_llm)
+compliance_agent = ComplianceAgent(gemini_llm)
 
 
 def run_ticket_resolution(ticket_text, order_context):

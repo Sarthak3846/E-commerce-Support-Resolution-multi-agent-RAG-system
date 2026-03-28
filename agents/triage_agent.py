@@ -6,6 +6,7 @@ class TriageAgent:
 
     def run(self, ticket_text: str, order_context: Dict) -> Dict:
         prompt = f"""
+Return ONLY valid JSON. No markdown. No explanation.
 You are a support triage agent.
 
 Classify the issue and detect missing fields.

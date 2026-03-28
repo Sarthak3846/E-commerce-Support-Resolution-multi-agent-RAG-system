@@ -6,6 +6,7 @@ class ComplianceAgent:
 
     def run(self, resolution_output: Dict) -> Dict:
         prompt = f"""
+Return ONLY valid JSON. No markdown. No explanation.
 You are a compliance and safety agent.
 
 Check:

@@ -4,15 +4,15 @@ class RetrieverAgent:
     def __init__(self, retriever):
         self.retriever = retriever
 
-    def run(self, query: str) -> List[Dict]:
-        docs = self.retriever.get_relevant_documents(query)
+    def run(self, query: str):
+        docs = self.retriever.retrieve(query)
 
         results = []
         for doc in docs:
             results.append({
-                "content": doc.page_content,
-                "source": doc.metadata.get("source", "unknown"),
-                "section": doc.metadata.get("section", "N/A")
+                "content": doc["text"],
+                "source": doc["source"],
+                "id": doc["id"]
             })
 
         return results

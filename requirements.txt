@@ -8,3 +8,5 @@ re
 json
 sentence-transformers
 faiss-cpu
+torch
+torchvision

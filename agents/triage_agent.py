@@ -1,27 +1,38 @@
-from typing import Dict, List
+from typing import Dict
+
 
 class TriageAgent:
     def __init__(self, llm):
         self.llm = llm
 
+    def safe_llm_call(self, prompt):
+        response = self.llm(prompt)
+        if not isinstance(response, dict):
+            return {"error": "Invalid LLM response"}
+        return response
+
     def run(self, ticket_text: str, order_context: Dict) -> Dict:
         prompt = f"""
-Return ONLY valid JSON. No markdown. No explanation.
-You are a support triage agent.
+Return ONLY valid JSON. No explanation.
 
-Classify the issue and detect missing fields.
+You are a triage agent.
 
-Ticket:
-{ticket_text}
+Classify the issue.
 
-Order Context:
-{order_context}
+IMPORTANT:
+- If the issue is clear (refund, return, cancellation, damaged item, wrong item)
+  → DO NOT ask clarifying questions
+- Only ask questions if decision CANNOT be made without missing data
 
-Return JSON:
+Examples:
+- "wrong size" → NO questions
+- "damaged item" → NO questions
+- "refund request" → NO questions
+
+Return:
 {{
   "issue_type": "...",
-  "confidence": "...",
-  "missing_fields": [],
+  "confidence": "low/medium/high",
   "clarifying_questions": []
 }}
 
@@ -29,8 +40,12 @@ Rules:
 - Issue types: refund, shipping, payment, promo, fraud, other
 - Ask max 3 clarifying questions if needed
 - Be precise
+
+Ticket:
+{ticket_text}
+
+Order Context:
+{order_context}
 """
 
-        response = self.llm(prompt)
-
-        return response
+        return self.safe_llm_call(prompt)

@@ -2,18 +2,13 @@ from agents.triage_agent import TriageAgent
 from agents.retriever_agent import RetrieverAgent
 from agents.resolver_agent import ResolverAgent
 from agents.compliance_agent import ComplianceAgent
+
+from rag.retriever import Retriever
 from utils.llm import gemini_llm
 
-# Replace with actual LLM + retriever
-def dummy_llm(prompt):
-    return {}
-
-class DummyRetriever:
-    def get_relevant_documents(self, query):
-        return []
 
 triage_agent = TriageAgent(gemini_llm)
-retriever_agent = RetrieverAgent(DummyRetriever())
+retriever_agent = RetrieverAgent(Retriever())
 resolver_agent = ResolverAgent(gemini_llm)
 compliance_agent = ComplianceAgent(gemini_llm)
 
@@ -25,9 +20,11 @@ def run_ticket_resolution(ticket_text, order_context):
     triage_result = triage_agent.run(ticket_text, order_context)
     logs.append(f"Triage Output: {triage_result}")
 
+    if not isinstance(triage_result, dict):
+        return {"error": "Triage failed"}, logs
+
     clarifying_questions = triage_result.get("clarifying_questions", [])
 
-    # If missing critical info → stop early
     if clarifying_questions:
         return {
             "classification": triage_result.get("issue_type"),
@@ -40,11 +37,11 @@ def run_ticket_resolution(ticket_text, order_context):
             "next_steps": "Await customer clarification"
         }, logs
 
-    # 2. RETRIEVE
-    retrieved_docs = retriever_agent.run(ticket_text)
+    # 2. RETRIEVE (IMPORTANT FIX: include context)
+    query = f"{ticket_text}\n{order_context}"
+    retrieved_docs = retriever_agent.run(query)
     logs.append(f"Retrieved Docs: {retrieved_docs}")
 
-    # Hard constraint: must have evidence
     if not retrieved_docs:
         return {
             "classification": triage_result.get("issue_type"),
@@ -61,7 +58,10 @@ def run_ticket_resolution(ticket_text, order_context):
     resolution = resolver_agent.run(ticket_text, order_context, retrieved_docs)
     logs.append(f"Resolution Output: {resolution}")
 
-    # 4. COMPLIANCE CHECK
+    if not isinstance(resolution, dict):
+        return {"error": "Resolution failed"}, logs
+
+    # 4. COMPLIANCE
     compliance = compliance_agent.run(resolution)
     logs.append(f"Compliance Output: {compliance}")
 
@@ -70,7 +70,13 @@ def run_ticket_resolution(ticket_text, order_context):
     if not compliance.get("is_valid", True):
         final_output = compliance.get("corrected_output", resolution)
 
-    # FINAL FORMAT (match Streamlit UI)
+    # HARD RULE: enforce citations
+    if not final_output.get("citations"):
+        final_output["decision"] = "needs escalation"
+        final_output["rationale"] = "Missing citations"
+        final_output["customer_response_draft"] = "We are escalating your request for further review."
+        final_output["next_steps"] = "Escalate to human support"
+
     structured_output = {
         "classification": triage_result.get("issue_type"),
         "confidence": triage_result.get("confidence"),

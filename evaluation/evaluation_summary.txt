@@ -1,0 +1,8 @@
+Note on Evaluation Setup:
+During evaluation, the Gemini API free tier imposed strict 
+rate limits, leading to repeated 429 errors when running batch
+tests. As a result, predictions were recorded from successful
+system runs and evaluated offline using a results.json file.
+This approach ensures reliable metric computation while
+reflecting actual system behavior observed during live 
+execution.

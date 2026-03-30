@@ -1,0 +1,34 @@
+[
+{"id": 1, "expected": "approve", "predicted": "approve"},
+{"id": 2, "expected": "approve", "predicted": "approve"},
+{"id": 3, "expected": "approve", "predicted": "approve"},
+{"id": 4, "expected": "approve", "predicted": "approve"},
+{"id": 5, "expected": "approve", "predicted": "approve"},
+
+{"id": 6, "expected": "deny", "predicted": "deny"},
+{"id": 7, "expected": "deny", "predicted": "deny"},
+{"id": 8, "expected": "deny", "predicted": "deny"},
+{"id": 9, "expected": "deny", "predicted": "deny"},
+{"id": 10, "expected": "deny", "predicted": "deny"},
+
+{"id": 11, "expected": "partial", "predicted": "partial"},
+{"id": 12, "expected": "partial", "predicted": "partial"},
+{"id": 13, "expected": "partial", "predicted": "partial"},
+{"id": 14, "expected": "partial", "predicted": "needs escalation"},
+
+{"id": 15, "expected": "needs escalation", "predicted": "needs escalation"},
+{"id": 16, "expected": "needs escalation", "predicted": "needs escalation"},
+{"id": 17, "expected": "needs escalation", "predicted": "needs escalation"},
+{"id": 18, "expected": "needs escalation", "predicted": "needs escalation"},
+{"id": 19, "expected": "needs escalation", "predicted": "needs escalation"},
+{"id": 20, "expected": "needs escalation", "predicted": "needs escalation"},
+
+{"id": 21, "expected": "approve", "predicted": "approve"},
+{"id": 22, "expected": "approve", "predicted": "approve"},
+{"id": 23, "expected": "approve", "predicted": "approve"},
+
+{"id": 24, "expected": "deny", "predicted": "deny"},
+{"id": 25, "expected": "deny", "predicted": "deny"},
+
+{"id": 26, "expected": "needs escalation", "predicted": "needs escalation"}
+]

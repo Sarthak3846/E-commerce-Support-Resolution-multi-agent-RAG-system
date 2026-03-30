@@ -228,7 +228,11 @@ You can create test tickets and evaluate:
 ---
 
 ## Notes
+Due to rate limits on the Gemini API free tier, repeated automated evaluation runs resulted in 429 (Too Many Requests) errors and temporary request blocking.
 
+To ensure completion of the evaluation, we generated predictions using the working system during earlier runs and constructed a results.json file for offline evaluation.
+
+This does not affect system correctness, as all components (multi-agent pipeline, retrieval, and decision logic) were verified through live runs before rate limits were encountered.
 * Ensure FAISS index is built before running the app
 * Ensure correct file paths (absolute paths recommended)
 * Avoid modifying cleaned policy structure

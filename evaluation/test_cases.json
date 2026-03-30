@@ -1,0 +1,236 @@
+[
+  {
+    "id": 1,
+    "ticket": "I received a damaged laptop screen right out of the box. I want a replacement.",
+    "order_context": {
+      "order_status": "delivered",
+      "item_category": "electronics"
+    },
+    "expected_decision": "approve"
+  },
+  {
+    "id": 2,
+    "ticket": "The t-shirt I bought is too small. I want to return it. It arrived 3 days ago.",
+    "order_context": {
+      "order_status": "delivered",
+      "item_category": "apparel"
+    },
+    "expected_decision": "approve"
+  },
+  {
+    "id": 3,
+    "ticket": "I accidentally placed this order 10 minutes ago, please cancel it immediately.",
+    "order_context": {
+      "order_status": "placed",
+      "item_category": "other"
+    },
+    "expected_decision": "approve"
+  },
+  {
+    "id": 4,
+    "ticket": "Tracking hasn't updated in 2 weeks and the carrier website says lost in transit. Please refund me.",
+    "order_context": {
+      "order_status": "shipped",
+      "item_category": "electronics"
+    },
+    "expected_decision": "approve"
+  },
+  {
+    "id": 5,
+    "ticket": "I ordered a red vase but received a blue one in the package.",
+    "order_context": {
+      "order_status": "delivered",
+      "item_category": "other"
+    },
+    "expected_decision": "approve"
+  },
+  {
+    "id": 6,
+    "ticket": "I want to return these socks. I tried them on and walked around outside, but they don't fit right.",
+    "order_context": {
+      "order_status": "delivered",
+      "item_category": "hygiene"
+    },
+    "expected_decision": "deny"
+  },
+  {
+    "id": 7,
+    "ticket": "I need to return this television. I bought it 60 days ago and decided I want a bigger one.",
+    "order_context": {
+      "order_status": "delivered",
+      "item_category": "electronics"
+    },
+    "expected_decision": "deny"
+  },
+  {
+    "id": 8,
+    "ticket": "Cancel my order! I see the tracking says it is out for delivery today but I changed my mind.",
+    "order_context": {
+      "order_status": "shipped",
+      "item_category": "apparel"
+    },
+    "expected_decision": "deny"
+  },
+  {
+    "id": 9,
+    "ticket": "I want a refund for this custom engraved watch. I don't like the font my name was printed in.",
+    "order_context": {
+      "order_status": "delivered",
+      "item_category": "final_sale"
+    },
+    "expected_decision": "deny"
+  },
+  {
+    "id": 10,
+    "ticket": "I downloaded the software key but decided I don't want to use it anymore. Please refund.",
+    "order_context": {
+      "order_status": "delivered",
+      "item_category": "final_sale"
+    },
+    "expected_decision": "deny"
+  },
+  {
+    "id": 11,
+    "ticket": "I shipped the camera back for a return, but I lost the battery and strap it came with.",
+    "order_context": {
+      "order_status": "returned",
+      "item_category": "electronics"
+    },
+    "expected_decision": "partial"
+  },
+  {
+    "id": 12,
+    "ticket": "I bought 4 pairs of pants in this order, but I am only returning 2 of them.",
+    "order_context": {
+      "order_status": "delivered",
+      "item_category": "apparel"
+    },
+    "expected_decision": "partial"
+  },
+  {
+    "id": 13,
+    "ticket": "I want to return this heavy sofa because it doesn't match my rug. I understand the return shipping costs will be deducted.",
+    "order_context": {
+      "order_status": "delivered",
+      "item_category": "other"
+    },
+    "expected_decision": "partial"
+  },
+  {
+    "id": 14,
+    "ticket": "I used the blender for a week and accidentally scratched the side, I want to return it.",
+    "order_context": {
+      "order_status": "returned",
+      "item_category": "electronics"
+    },
+    "expected_decision": "partial"
+  },
+  {
+    "id": 15,
+    "ticket": "I ordered a smartphone and the package was delivered today, but the box was completely empty! Someone tampered with it.",
+    "order_context": {
+      "order_status": "delivered",
+      "item_category": "electronics"
+    },
+    "expected_decision": "needs escalation"
+  },
+  {
+    "id": 16,
+    "ticket": "Your delivery driver threw my package at my dog. I have it on camera and I am going to sue your company!",
+    "order_context": {
+      "order_status": "delivered",
+      "item_category": "other"
+    },
+    "expected_decision": "needs escalation"
+  },
+  {
+    "id": 17,
+    "ticket": "The seller is refusing to refund my returned iPhone because they claim the IMEI number doesn't match the one they shipped.",
+    "order_context": {
+      "order_status": "returned",
+      "item_category": "electronics"
+    },
+    "expected_decision": "needs escalation"
+  },
+  {
+    "id": 18,
+    "ticket": "My order was cancelled but my bank account is closed. You must send the refund to my friend's account instead.",
+    "order_context": {
+      "order_status": "cancelled",
+      "item_category": "other"
+    },
+    "expected_decision": "needs escalation"
+  },
+  {
+    "id": 19,
+    "ticket": "The battery on this drone caught fire while it was charging and burned a hole in my desk.",
+    "order_context": {
+      "order_status": "delivered",
+      "item_category": "electronics"
+    },
+    "expected_decision": "needs escalation"
+  },
+  {
+    "id": 20,
+    "ticket": "I know I have returned 15 items in the last week, but I need to return this jacket too.",
+    "order_context": {
+      "order_status": "delivered",
+      "item_category": "apparel"
+    },
+    "expected_decision": "needs escalation"
+  },
+  {
+    "id": 21,
+    "ticket": "I bought this fruit basket but it arrived completely rotten and moldy. I have taken photos.",
+    "order_context": {
+      "order_status": "delivered",
+      "item_category": "perishable"
+    },
+    "expected_decision": "approve"
+  },
+  {
+    "id": 22,
+    "ticket": "Please cancel my order. I placed it yesterday and it has not been dispatched yet.",
+    "order_context": {
+      "order_status": "placed",
+      "item_category": "apparel"
+    },
+    "expected_decision": "approve"
+  },
+  {
+    "id": 23,
+    "ticket": "I'm trying to return a guitar I bought 4 days ago, it arrived with a cracked neck.",
+    "order_context": {
+      "order_status": "delivered",
+      "item_category": "other"
+    },
+    "expected_decision": "approve"
+  },
+  {
+    "id": 24,
+    "ticket": "I bought a fresh birthday cake yesterday and want to return it today because we didn't end up eating it.",
+    "order_context": {
+      "order_status": "delivered",
+      "item_category": "perishable"
+    },
+    "expected_decision": "deny"
+  },
+  {
+    "id": 25,
+    "ticket": "I want a full refund for this laptop. I spilled a cup of coffee on the keyboard and now it won't turn on.",
+    "order_context": {
+      "order_status": "delivered",
+      "item_category": "electronics"
+    },
+    "expected_decision": "deny"
+  },
+  {
+    "id": 26,
+    "ticket": "My account was hacked and someone ordered 5 televisions using my saved card. Cancel them immediately, this is fraud!",
+    "order_context": {
+      "order_status": "placed",
+      "item_category": "electronics"
+    },
+    "expected_decision": "needs escalation"
+  }
+]

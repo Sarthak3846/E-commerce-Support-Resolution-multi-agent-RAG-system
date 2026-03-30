@@ -1,0 +1,62 @@
+[
+{
+"name": "Amazon Dispute Resolution Policy",
+"url": "https://pay.amazon.com/help/201754740",
+"date_accessed": "2026-03-30",
+"notes": "Covers dispute handling, fraud, and escalation cases"
+},
+{
+"name": "Amazon Cancellation Policy",
+"url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=GSL37WQTJZUYA9QE",
+"date_accessed": "2026-03-30",
+"notes": "Order cancellation rules before and after shipment"
+},
+{
+"name": "Amazon Return Policy",
+"url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=202111910",
+"date_accessed": "2026-03-30",
+"notes": "Return eligibility, timelines, and exceptions"
+},
+{
+"name": "Amazon Shipping and Delivery Policy",
+"url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=GRK3YG3G4Y3R4LWJ",
+"date_accessed": "2026-03-30",
+"notes": "Shipping timelines, delivery issues, and lost package handling"
+},
+{
+"name": "eBay Money Back Guarantee",
+"url": "https://www.ebay.com/help/policies/ebay-money-back-guarantee-policy/ebay-money-back-guarantee-policy?id=4210",
+"date_accessed": "2026-03-30",
+"notes": "Buyer protection, refunds, and dispute resolution"
+},
+{
+"name": "eBay Order Cancellation Policy",
+"url": "https://www.ebay.com/help/policies/member-behavior-policies/order-cancellation-policy?id=5298",
+"date_accessed": "2026-03-30",
+"notes": "Rules for canceling orders and seller responsibilities"
+},
+{
+"name": "eBay Returns and Refunds Policy",
+"url": "https://www.ebay.com/help/buying/returns-refunds/returning-item?id=4041",
+"date_accessed": "2026-03-30",
+"notes": "Return process, refund timelines, and conditions"
+},
+{
+"name": "Flipkart Returns and Cancellation Policy",
+"url": "https://www.flipkart.com/pages/returnpolicy",
+"date_accessed": "2026-03-30",
+"notes": "Combined return, refund, and cancellation policies"
+},
+{
+"name": "Synthetic Exceptions Policy",
+"url": "N/A",
+"date_accessed": "2026-03-30",
+"notes": "Custom policy covering non-returnable items, hygiene products, and final sale conditions"
+},
+{
+"name": "Synthetic Promotions and Coupon Policy",
+"url": "N/A",
+"date_accessed": "2026-03-30",
+"notes": "Custom policy covering coupon usage, expiration, and misuse"
+}
+]
